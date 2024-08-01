@@ -136,13 +136,13 @@ export default function Home() {
               Inventory Items
             </Typography>
           </Box>
-        <Stack width="800px" height = "300px" spacing={2} overflow="auto">
+        <Stack width="800px" height = "400px" spacing={1} overflow="auto">
           {
             inventory.map(({name, quantity})=> (
               <Box 
                 key={name} 
                 width="100%" 
-                minHeight="150px" 
+                minHeight="75px" 
                 display="flex" 
                 alignItems="center" 
                 justifyContent="space-between" 
@@ -152,7 +152,10 @@ export default function Home() {
                   <Typography
                     variant='h2'
                     color = '#333'
-                    textAlign = 'center'
+                    textAlign = 'left'
+                    flex={.5}
+                    sx={{ fontSize: '2.5rem'}}
+                    // flexGrow = {1}
                     >
                       {name.charAt(0).toUpperCase() + name.slice(1)}
                   </Typography>
@@ -160,6 +163,8 @@ export default function Home() {
                     variant='h2'
                     color = '#333'
                     textAlign = 'center'
+                    sx={{ fontSize: '2.5rem'}}
+                    // flexShrink = {0}
                     >
                       {quantity}
                   </Typography>
